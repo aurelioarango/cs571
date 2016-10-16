@@ -11,10 +11,11 @@ using namespace std;
 int main()
 {
 
-  Board board();
-
-  //board.update_board(2,2,'X')
-  //board.display_board();
+  Board board;
+  board.display_board();
+  board.update_board(1,1,'X');
+  cout<<endl;
+  board.display_board();
 
   return 0;
 }
