@@ -6,9 +6,9 @@ CC = g++ #compiler used
 CFLAGS = -g -Wall #compilation flags
 LIB = -lm	#link libraries
 LDFLAGS = -L. #link flags
-PROG = main #main program executable
-OBJ = main.o  #target files to link
-SRC = main.cpp #source files
+PROG = main.out #main program executable
+OBJ = main.o Board.o  #target files to link
+SRC = main.cpp Board.cpp#source files
 
 all : $(PROG)
 
