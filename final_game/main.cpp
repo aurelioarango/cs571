@@ -15,7 +15,7 @@ int main()
   board.display_board();
   board.update_board(1,1,'X');
   cout<<endl;
-  board.display_board();
+  //board.display_board();
 
   return 0;
 }

@@ -28,6 +28,7 @@ class Board{
     bool valid_char(char input);
     //
     bool valid_position(int row, int col);
+    //add comment
 };
 
 #endif
