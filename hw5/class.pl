@@ -1,7 +1,6 @@
 
-topc :- write('Give me a cs class: '),
-        read(c),
+topc :- write('Give me a cs class: '), read(c),
         classinfo(c, instructor(I), days(D), times(T)),
-        write(I), n1, write(D), n1, write(T), n1.
+        write(I), nl, write(D), nl, write(T), nl.
 
-classinfo(cs311,instructor('Rika Yoshii'),days('TR'),times('1:00-2:15')).
+classinfo(cs311, instructor('Rika Yoshii'), days('TR'), times('1:00-2:15')).
