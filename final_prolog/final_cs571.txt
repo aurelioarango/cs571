@@ -1,0 +1,45 @@
+Final Project Choice 2: Knowledge-based System [12pts per section]
+
+
+Your task is to construct a mini-rule-based expert system using Prolog for
+Diagnosis or Classification/Selection in the domain of your choice.
+It should be useful.  Check with me if you are in doubt.
+
+
+Minimum System Requirements:
+Must have at least 15 “main” rules, several sub-goal rules, and at least 10 facts.
+(By “main” I mean rules such as “choose” in the HW example).
+Must have confidence/certainly factors added as comments.
+Must have lots of useful comments describing the rules and facts.
+Implement the system in Prolog (must be testable using gprolog on empress.csusm.edu).
+
+
+Section 1 of Your Report = Purpose of the Expert System
+Describe your domain and state whether it is for Diagnosis or for Classification/Selection.
+e.g. Medical diagnosis for lung related diseases based on symptoms
+e.g. Classification of birds based on physical characteristics
+e.g. Selection of cars based on customer needs
+State the goal/conclusion that the system reaches. State the user inputs in detail.
+What are the actual possible conclusions (list them)?
+What information do you need from the user (list them with values)?
+State why BWC, DFS is suitable for this problem domain. Why not FWC?
+
+
+Section 2 of Your Report = Implementation (Source Code is not part of the report)
+State the types of facts (if any) available in the knowledge base:
+Describe the types of rules the system uses.  For example,
+for the ESexample (week 9), describe what choose rules are for,
+what reddish rules are for, etc.
+
+
+Section 3 of Your Report = Testing and Results
+  Test your program thoroughly and make sure it matches your expectations.
+  Submit 4 example runs of the program each with and without tracing
+  (screen snapshots) <insert into the document>
+Test 1: should show what happens when there is no answer.
+Test 2: should arrive at an answer very quickly.
+Test 3 and Test 4: should arrive at an answer after some backtracking.
+
+
+Section 4 of Your Report = Confidence Analysis
+      What is the confidence you have in Test 3 and Test 4 answers from Section 4?
