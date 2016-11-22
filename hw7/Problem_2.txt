@@ -1,0 +1,36 @@
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.49 (2010-07-07) <http://clisp.cons.org/>
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2010
+
+Type :h and hit Enter for context help.
+
+[1]> 
+;; Loading file eliza.lsp ...
+;; Loaded file eliza.lsp
+T
+[2]> Hi. My name is eliza. What is yours? Looking at my records you are 40 and MARRIED
+you have 3 children.and your last name is BLUE.
+So tell me how you are feeling today (ENCLOSE YOUR ANSWER IN PARENTHESES. NO COMMAS!)
+1(WHY ARE YOU HAPPY?)
+2(HMM.. DESCRIBE IT MORE)
+3(WHY? DO YOU THINK)
+4(I SEE. AND?)
+5(YOU BELIVE YOU ARE GOING TO PLAY WITH MY FRIENDS ..IS THAT RIGHT?)
+
+*** - READ: comma is illegal outside of backquote
+The following restarts are available:
+ABORT          :R1      Abort main loop
+Break 1 [3]> 
+Bye.

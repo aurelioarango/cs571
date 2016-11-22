@@ -9,15 +9,17 @@ top_s :- write('Disease name?: '),
   search(Disease, Causes(C), Symptoms(S)),
   write(C),tab(1),write(S),nl.
 
-% Disease: canine_distemper
+% Disease: canine distemper
 % Causes: Virus
 % Symptoms: runny eyes, fever, snotty nose, coughing, vomiting diarrihea, seizures, paralysis
-% Cure: Prevented with core-vaccine
+% Prevention: Prevented with core-vaccine, routine cleaning, drying,
+% Treatment: Lots of fluids, electrolites, analgesicts, antibiotics
 
-% Diease: canine_influenza
-% Causes: Influenza Virus
-% Symptoms: coughing, fever, and snotty nose
-% Cure: Vaccine, check with veterinarian
+% Diease: canine influenza
+% Causes: Influenzavirus A, equine influenza
+% Symptoms: coughing from 10-30 dyas, greenish nasal discharged, high fever, pneumonia
+% Prevention: Vaccine, check with veterinarian
+% Treatment:  Vaccine
 
 % Diease: Parvo
 % Causes: canine parvovirus type 2
@@ -75,7 +77,7 @@ top_s :- write('Disease name?: '),
 % Cure: Poison control center
 
 % Diease: Cryptosporidiosis
-% Causes: microscopic parasite, spread fecal-oral route, human contagious 
+% Causes: microscopic parasite, spread fecal-oral route, human contagious
 % Symptoms: stomach cramps, diarrihea, vominting, fever
 % Cure:
 
