@@ -17,4 +17,23 @@ Copyright (c) Sam Steingold, Bruno Haible 2001-2010
 Type :h and hit Enter for context help.
 
 [1]> 
+;; Loading file mynlp.lsp ...
+;; Loaded file mynlp.lsp
+T
+[2]> Hi, give me the verb of a sentence: 
+Verb not found
+[3]> Hi, give me the verb of a sentence: 
+
+give the noun of the sentence Noun not found
+[4]> Hi, give me the verb of a sentence: 
+
+give the noun of the sentence 
+give me the next noun for the sentence 
+(WENT ACTOR (PETER) TO (MUSEUM))
+[5]> Hi, give me the verb of a sentence: 
+
+give the noun of the sentence 
+give me the next noun for the sentence 
+(FLEW ACTOR (HALEY) TO (LIBRARY))
+[6]> 
 Bye.
