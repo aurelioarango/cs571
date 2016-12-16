@@ -47,7 +47,8 @@
 
 (defun main ()
   ;; variables to use for the program
-  (prog (sentence property CD noun2 PTRANS ERROR ERROR_NOT_HUMAN)
+  (prog (sentence property CD noun2 PTRANS
+    ERROR_NOT_LOCATION ERROR_NOT_TO ERROR_NOT_HUMAN)
     ;;first get a sentence from the user
     (princ "Hi, give me a sentence in parenthesis: ")
     (setq sentence (read))
@@ -60,33 +61,52 @@
       (setq CD P-CD)
       (cond
         ((eq 'HUMAN (get (first_word sentence) 'Category))
-            (princ "IT IS HUMAN") )
-
-        (T (go ERROR_NOT_HUMAN))
-        )
-
-      )
+            ;;(princ "IT IS HUMAN")
+            (setq CD ( fill_actor CD (first_word sentence)))
+            (if(not (eq 'to (third sentence) )) (go ERROR_NOT_TO)
+              ;;else exit-----------------------------
+              ;;Check if 4 is article
+              (if (eq 'ARTICLE (get (fourth_word sentence) 'Category)  )
+                ;; check if 5th word is location
+                (if (eq 'LOCATION (get (fifth_word sentence) 'Category) )
+                  (setq CD ( fill_location CD (fifth_word sentence)))
+                  ;;ELSE check if 4th word is location
+                  (if (eq 'LOCATION (get (fourth_word sentence) 'Category))
+                     (setq CD ( fill_location CD (fifth_word sentence)))
+                    ;;Else if is 4th word is not location
+                     (go ERROR_NOT_LOCATION)
+                   )
+                )
+              );; end of if to check location and article
+            );;end of if-else to check "to"
+          );; end of check for Human
+        ;;Check if is atrans,
+        (T (go ERROR_NOT_HUMAN)));;End of condition (Else statement HUMAN)
+      ;;check if is transitive
+      ;;((eq 'PTRANS (get (second_word sentence) 'Category))
+    )
 
 
 
     )
+    (terpri)
+    (princ "Exit condition")
+    (terpri)
+    (princ CD)
 
-    ERROR_NOT_HUMAN(princ "ERROR::NOT HUMAN TYPE")
                     (ABORT)
-
-
-
-    ;;(princ A-CD)
-    ;;blank line
-    (terpri)
-    ;;(princ P-CD)
-    (terpri)
-    ;;(setq P-CD ( fill_actor P-CD (first_word sentence)))
-    ;;(princ (is_this_type (first_word sentence) 'HUMAN) )
-    (terpri)
-    ;;(princ P-CD)
-    (terpri)
-    (princ "IT WORKS!!!!")
+    ERROR_NOT_ARTICLE (princ "ERROR::NOT ARTICLE TYPE")
+                    (princ CD)
+                    (ABORT)
+    ERROR_NOT_LOCATION (princ "ERROR::NOT LOCATION TYPE")
+                    (princ CD)
+                    (ABORT)
+    ERROR_NOT_HUMAN (princ "ERROR::NOT HUMAN TYPE")
+                    (princ CD)
+                    (ABORT)
+    ERROR_NOT_TO (princ "ERROR::NOT TO TYPE")
+                    (princ CD)
+                    (ABORT)
   )
 )
 ;;-------------------------------get words-------------------
