@@ -43,7 +43,7 @@
   (setf (get 'THE 'Category) 'ARTICLE)
 ;;add <object>
   (setf (get 'book 'Category) 'OBJECT)
-  (setf (get 'sold 'Category) 'OBJECT)
+  ;;(setf (get 'sold 'Category) 'OBJECT)
 
 (defun main ()
   ;; variables to use for the program
@@ -61,7 +61,7 @@
       (setq CD P-CD)
       (cond
         ((eq 'HUMAN (get (first_word sentence) 'Category))
-            ;;(princ "IT IS HUMAN")
+            ;; Set actor in CD
             (setq CD ( fill_actor CD (first_word sentence)))
             (if(not (eq 'to (third sentence) )) (go ERROR_NOT_TO)
               ;;else exit-----------------------------
@@ -83,16 +83,15 @@
         ;;Check if is atrans,
         (T (go ERROR_NOT_HUMAN)));;End of condition (Else statement HUMAN)
       ;;check if is transitive
-      ;;((eq 'PTRANS (get (second_word sentence) 'Category))
+      )
+
+      (T (princ (get (second_word sentence) 'Category) ) )
     )
 
-
-
-    )
-    (terpri)
-    (princ "Exit condition")
-    (terpri)
-    (princ CD)
+      (terpri)
+      (princ "Exit condition")
+      (terpri)
+      (princ CD)
 
                     (ABORT)
     ERROR_NOT_ARTICLE (princ "ERROR::NOT ARTICLE TYPE")
@@ -109,6 +108,11 @@
                     (ABORT)
   )
 )
+;;--------------------------function to compute P-trans-----
+
+
+
+
 ;;-------------------------------get words-------------------
 ;;Returns the fist element of the sentence.
 (defun first_word(sentence)
