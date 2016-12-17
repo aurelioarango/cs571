@@ -1,0 +1,10 @@
+Created by Aurelio Arango
+for CS571
+DATE: 12:14:16
+
+To compile and run the program type:
+clisp
+(load final.lsp)
+(main)
+
+Then, type your sentence in parenthesis.
