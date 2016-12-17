@@ -1,0 +1,48 @@
+  i i i i i i i       ooooo    o        ooooooo   ooooo   ooooo
+  I I I I I I I      8     8   8           8     8     o  8    8
+  I  \ `+' /  I      8         8           8     8        8    8
+   \  `-+-'  /       8         8           8      ooooo   8oooo
+    `-__|__-'        8         8           8           8  8
+        |            8     o   8           8     o     8  8
+  ------+------       ooooo    8oooooo  ooo8ooo   ooooo   8
+
+Welcome to GNU CLISP 2.49 (2010-07-07) <http://clisp.cons.org/>
+
+Copyright (c) Bruno Haible, Michael Stoll 1992, 1993
+Copyright (c) Bruno Haible, Marcus Daniels 1994-1997
+Copyright (c) Bruno Haible, Pierpaolo Bernardi, Sam Steingold 1998
+Copyright (c) Bruno Haible, Sam Steingold 1999-2000
+Copyright (c) Sam Steingold, Bruno Haible 2001-2010
+
+Type :h and hit Enter for context help.
+
+[1]> 
+;; Loading file final.lsp ...
+;; Loaded file final.lsp
+T
+[2]> Hi, give me a sentence in parenthesis: (PTRANS ACTOR (JOHN) TO (SCHOOL))
+(JOHN WA SCHOOL NI ITTA)
+[3]> Hi, give me a sentence in parenthesis: (PTRANS ACTOR (JOHN) TO (SCHOOL))
+(JOHN WA SCHOOL NI ITTA)
+[4]> Hi, give me a sentence in parenthesis: ERROR::NOT HUMAN TYPE(PTRANS ACTOR (A-FILLER) TO (T-FILLER))
+[5]> Hi, give me a sentence in parenthesis: ERROR::NOT TO TYPE(PTRANS ACTOR (JOHN) TO (T-FILLER))
+[6]> Hi, give me a sentence in parenthesis: ERROR::NOT LOCATION TYPE(PTRANS ACTOR (JOHN) TO (T-FILLER))
+[7]> Hi, give me a sentence in parenthesis: (ATRANS ACTOR (HALEY) OBJECT (BOOK) TO (JOHN))
+(HALEY WA JOHN NI BOOK O WATASHITA)
+[8]> Hi, give me a sentence in parenthesis: 
+(ATRANS ACTOR (HALEY) OBJECT (BOOK) TO (JOHN)) 
+(HALEY WA JOHN NI BOOK O WATASHITA)
+[9]> Hi, give me a sentence in parenthesis: ERROR::NOT HUMAN TYPE(ATRANS ACTOR (A-FILLER) OBJECT (O-FILLER) TO (T-FILLER))
+[10]> 
+*** - EVAL: undefined function HALEY
+The following restarts are available:
+USE-VALUE      :R1      Input a value to be used instead of (FDEFINITION 'HALEY).
+RETRY          :R2      Retry
+STORE-VALUE    :R3      Input a new value for (FDEFINITION 'HALEY).
+ABORT          :R4      Abort main loop
+Break 1 [11]> Hi, give me a sentence in parenthesis: ERROR::NOT OBJECT TYPE(ATRANS ACTOR (HALEY) OBJECT (O-FILLER) TO (T-FILLER))
+Break 1 [11]> Hi, give me a sentence in parenthesis: ERROR::NOT TO TYPE(ATRANS ACTOR (HALEY) OBJECT (BOOK) TO (T-FILLER))
+Break 1 [11]> Hi, give me a sentence in parenthesis: ERROR::NOT HUMAN TYPE(ATRANS ACTOR (HALEY) OBJECT (BOOK) TO (T-FILLER))
+Break 1 [11]> Hi, give me a sentence in parenthesis: ERROR::NOT ATRANS NOR PTRANS TYPE
+Break 1 [11]> 
+Bye.

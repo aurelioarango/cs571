@@ -15,7 +15,7 @@
 ;;                    OBJECT  (O-filler)
 ;;        	      		TO  		( T-filler ))
 ;;set A-CD
-(setq A-CD '(PTRANS ACTOR ( A-Filler ) OBJECT (O-filler) TO ( T-filler )))
+(setq A-CD '(ATRANS ACTOR ( A-Filler ) OBJECT (O-filler) TO ( T-filler )))
 
 
 ;;Setting Part of Speech (POS)
@@ -73,13 +73,14 @@
                 (if (eq 'LOCATION (get (fifth_word sentence) 'Category) )
                   (setq CD ( fill_location CD (fifth_word sentence)))
                   ;;ELSE check if 4th word is location
-                  (if (eq 'LOCATION (get (fourth_word sentence) 'Category))
-                      ;; full P-TRANS
-                     (setq CD ( fill_location CD (fifth_word sentence)))
-                    ;;Else if is 4th word is not location
-                     (go ERROR_NOT_LOCATION)
-                   )
+                  (go ERROR_NOT_LOCATION)
                 )
+                (if (eq 'LOCATION (get (fourth_word sentence) 'Category))
+                    ;; full P-TRANS
+                   (setq CD ( fill_location CD (fourth_word sentence)))
+                  ;;Else if is 4th word is not location
+                   (go ERROR_NOT_LOCATION)
+                 )
               );; end of if to check location and article
             );;end of if-else to check "to"
           );; end of check for Human
@@ -116,11 +117,11 @@
             );; end of check for Human
           ;;Check if is atrans,
           (T (go ERROR_NOT_HUMAN)));;End of condition (Else statement HUMAN)
-
       )
       (T (go ERROR_NOT_PTRANS_NOR_ATRANS))
     )
-
+    (princ CD)
+    (P_translate CD trans_sentence)
 
                     (ABORT)
     3_word_IS_OBJECT
@@ -132,7 +133,7 @@
           (go ERROR_NOT_TO )
         )
         ;;ATRANS Pass CD to translate
-
+        (print CD)
         (A_translate CD trans_sentence)
                     (ABORT)
     4_word_IS_OBJECT
@@ -143,6 +144,7 @@
             (go ERROR_NOT_HUMAN))
           (go ERROR_NOT_TO))
           ;; Atrans Pass to Translate
+            (princ CD)
             (A_translate CD trans_sentence)
 
 ;;-------------------Handling ERRORS-------------------------------------
@@ -193,9 +195,10 @@
   ;;followed by wa
   (setq trans_sentence (append trans_sentence '(wa)))
   ;;generate To
-  (setq trans_sentence (append trans_sentence (seventh_word CD)))
+  (setq trans_sentence (append trans_sentence (fifth_word CD)))
   ;;followed by ni
   (setq trans_sentence (append trans_sentence '(ni)))
+  ;;followed by itta
   (setq trans_sentence (append trans_sentence '(itta)))
   (princ trans_sentence)
 )
