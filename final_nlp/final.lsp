@@ -62,6 +62,7 @@
     ((eq 'PTRANS (get (second_word sentence) 'Category))
       (setq CD P-CD)
       (cond
+      ;;check if is human
         ((eq 'HUMAN (get (first_word sentence) 'Category))
             ;; Set actor in CD
             (setq CD ( fill_actor CD (first_word sentence)))
@@ -92,11 +93,10 @@
       ((eq 'ATRANS (get (second_word sentence) 'Category))
         (setq CD A-CD)
         (cond
+        ;;check if is human
           ((eq 'HUMAN (get (first_word sentence) 'Category))
               ;; Set actor in CD
               (setq CD ( fill_actor CD (first_word sentence)))
-
-
                 ;;Check if 3rd word is article
                 (if (eq 'ARTICLE (get (third_word sentence) 'Category)  )
                   ;; check if 4th word is object
@@ -120,7 +120,9 @@
       )
       (T (go ERROR_NOT_PTRANS_NOR_ATRANS))
     )
+    ;;for Ptrans, print CD
     (princ CD)
+    ;;translate to japanese
     (P_translate CD trans_sentence)
 
                     (ABORT)
@@ -149,21 +151,27 @@
 
 ;;-------------------Handling ERRORS-------------------------------------
                     (ABORT)
+                    ;;handle when there is no object
     ERROR_NOT_OBJECT (princ "ERROR::NOT OBJECT TYPE")
                     (princ CD)
                     (ABORT)
+                    ;;handle when there is no article
     ERROR_NOT_ARTICLE (princ "ERROR::NOT ARTICLE TYPE")
                     (princ CD)
                     (ABORT)
+                    ;;handle when there is no location
     ERROR_NOT_LOCATION (princ "ERROR::NOT LOCATION TYPE")
                     (princ CD)
                     (ABORT)
+                    ;;handle no human
     ERROR_NOT_HUMAN (princ "ERROR::NOT HUMAN TYPE")
                     (princ CD)
                     (ABORT)
+                    ;;handle not having to
     ERROR_NOT_TO (princ "ERROR::NOT TO TYPE")
                     (princ CD)
                     (ABORT)
+                    ;;handle no verb 
     ERROR_NOT_PTRANS_NOR_ATRANS(princ "ERROR::NOT ATRANS NOR PTRANS TYPE")
                     ;;(princ CD)
                     (ABORT)
